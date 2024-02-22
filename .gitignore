@@ -160,4 +160,8 @@ cython_debug/
 #.idea/
 
 # My files
-.DS_Store
+**.DS_Store
+**.txt
+**.zst
+**.parquet
+**.pkl
