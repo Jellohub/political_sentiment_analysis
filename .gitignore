@@ -161,6 +161,3 @@ cython_debug/
 
 # My files
 .DS_Store
-.txt
-.zst
-.parquet
