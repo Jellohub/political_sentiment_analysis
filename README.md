@@ -94,7 +94,7 @@ Sentiment analysis was done with VADER (Valence Aware Dictionary sEntiment Reaso
 [Neptune.ai](https://neptune.ai/blog/sentiment-analysis-python-textblob-vs-vader-vs-flair#:~:text=Valence%20aware%20dictionary%20for%20sentiment,to%20calculate%20the%20text%20sentiment.&text=Positive%2C%20negative%2C%20and%20neutral.) describes VADER as being "optimized for social media data and can yield good results when used with data from twitter, facebook, etc." Since Reddit counts as social media, I believe VADER is a good choice for this project.
 
 ![VADER before neutral value removal](visualizations/vader_pre_removal.png)
-![VADER after neutral value removal](/figures/vader_post_removal.png)
+![VADER after neutral value removal](/visualizations/vader_post_removal.png)
 
 ### Bag of words features
 
@@ -179,7 +179,41 @@ So I would say our data could be considered limited in scope.
 ## Insights & Recommendations
 ![top_unigrams](visuazliations/top_unigrams.png)
 ![top_bigrams](visuazliations/top_bigrams.png)
-![top_trigrams](visuazliations/top_igrams.png)
+![top_trigrams](visuazliations/top_tigrams.png)
+
+Based on the top n-grams above:
+
+### Insight #1
+The base is passionate about their representative
+- “Best” is listed in the most positive words
+- The word “Trump” is listed in the most positive words
+- The phrase “god emperor Trump” is listed in the most positive trigrams
+- Phrases insulting their representative such as “orange man bad” and “anti trump” are listed in the most negative trigrams
+
+
+### Insight #2
+The base is passionately against opposing politicians and organizations
+- “News”, “media”, “fake news”, “fake news media”, “CNN fake news” and “deep state” appear in the most negative phrases
+- “Hillary”, “Bill Clinton,” “Bill Clinton rapist”, “left”, and “liberalism mental disorder” appear in the most negative phrases
+
+### Insight #3
+The base is highly religious
+- “God”, “God bless,” “thank God”, and “God bless America” appear in the most positive phrases.
+
+### Insight #4
+The base is very passionate about the relevant issues
+- Swear words such as the f-word and “shit” commonly appear in both the most positive and negative phrases column.
+
+### Insight #5
+The base is very fond of their country
+- Country-oriented phrases such as “America great”, “United States”, “God bless America,” “make America great,” and “making America great” appear in the positive column.
+- Phrases such as “civil war” and “middle east” appear in the negative column.
+
+### Recommendations
+
+- Try to match the base’s enthusiasm with your own
+- Be aware that they are angry against certain people and organizations and want immediate change
+- Be aware of the relevant issues that dominate the voter base's conversation
 
 
 ## Repository Structure
