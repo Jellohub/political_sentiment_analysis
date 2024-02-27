@@ -64,14 +64,14 @@ If you're skeptical about the effectiveness of these measures, or you think they
 ### Capping post length at 200 words
 - Looking at the distribution of post length, it was extremely skewed to the right. Capping post length at 200 words results in a much more reasonable distribution.
 
-![length_pre_removal](visuazliations/lengths_pre_removal.png)
-![length_post_removal](visuazliations/lengths_post_removal.png)
+![length_pre_removal](visualizations/lengths_pre_removal.png)
+![length_post_removal](visualizations/lengths_post_removal.png)
 
 ### Giving post score a hard boundary of (-25, 100)
 - Looking at the distribution of post scores, it had long tails to both the right and left. A lower boundary of -25 and an upper boundary of 100 returned the distribution to a more reasonable state.
 
-![score_pre_removal](visuazliations/score_pre_removal.png)
-![score_post_removal](visuazliations/score_post_removal.png)
+![score_pre_removal](visualizations/scores_pre_removal.png)
+![score_post_removal](visualizations/scores_post_removal.png)
 
 ### Spam removal
 - Removing posts longer than 200 words eliminated some spam, but not all.
