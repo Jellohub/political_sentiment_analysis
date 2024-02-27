@@ -166,3 +166,4 @@ cython_debug/
 **.parquet
 **.pkl
 **.key
+github.pdf

@@ -218,8 +218,9 @@ The base is very fond of their country
 
 ## Repository Structure
 - **[data](https://github.com/Jellohub/political_sentiment_analysis/tree/master/data)**: folder containing data files, if any.
-    - [**training_data**]: the target variables and features required for the linear regression models.
+    - [**training_data**](https://github.com/Jellohub/political_sentiment_analysis/tree/master/data/training_data): the target variables and features required for the linear regression models.
 - **[notebooks](https://github.com/Jellohub/political_sentiment_analysis/tree/master/notebooks)**: folder containing all four secondary notebooks. These are only there for anyone who wants technical details.
 - **[visualizations](https://github.com/Jellohub/political_sentiment_analysis/tree/master/visualizations)**: folder containing all visualizations used in the presentation and README.
 - **[final notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/final_notebook.ipynb)**: project notebook containing all data imports, preprocessing, feature engineering, models, and visualizations.
+- **[final_notebook.pdf](https://github.com/Jellohub/political_sentiment_analysis/blob/master/final_notebook.pdf)**: the pdf version of the final notebook
 - **[presentation.pdf](https://github.com/Jellohub/political_sentiment_analysis/blob/master/presentation.pdf)**: pdf file with all presentation slides.
