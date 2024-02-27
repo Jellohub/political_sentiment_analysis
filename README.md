@@ -179,7 +179,7 @@ So I would say our data could be considered limited in scope.
 ## Insights & Recommendations
 ![top_unigrams](visualizations/top_unigrams.png)
 ![top_bigrams](visualizations/top_bigrams.png)
-![top_trigrams](visualizations/top_tigrams.png)
+![top_trigrams](visualizations/top_trigrams.png)
 
 Based on the top n-grams above:
 
