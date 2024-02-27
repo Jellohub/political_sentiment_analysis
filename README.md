@@ -9,9 +9,6 @@ The stakeholder is a social media communications team working for a political ca
 
 ## Data Origin & Description
 
-#### Price trend including 2008 market crash
-![Price trend including 2008 market crash](/figures/trend_before.png)
-
 All steps taken in this section were performed in [the "data_prep" notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/data_prep.ipynb).
 
 ### Data: Origin
@@ -67,8 +64,14 @@ If you're skeptical about the effectiveness of these measures, or you think they
 ### Capping post length at 200 words
 - Looking at the distribution of post length, it was extremely skewed to the right. Capping post length at 200 words results in a much more reasonable distribution.
 
+![length_pre_removal](visuazliations/lengths_pre_removal.png)
+![length_post_removal](visuazliations/lengths_post_removal.png)
+
 ### Giving post score a hard boundary of (-25, 100)
 - Looking at the distribution of post scores, it had long tails to both the right and left. A lower boundary of -25 and an upper boundary of 100 returned the distribution to a more reasonable state.
+
+![score_pre_removal](visuazliations/score_pre_removal.png)
+![score_post_removal](visuazliations/score_post_removal.png)
 
 ### Spam removal
 - Removing posts longer than 200 words eliminated some spam, but not all.
@@ -90,6 +93,9 @@ Sentiment analysis was done with VADER (Valence Aware Dictionary sEntiment Reaso
 
 [Neptune.ai](https://neptune.ai/blog/sentiment-analysis-python-textblob-vs-vader-vs-flair#:~:text=Valence%20aware%20dictionary%20for%20sentiment,to%20calculate%20the%20text%20sentiment.&text=Positive%2C%20negative%2C%20and%20neutral.) describes VADER as being "optimized for social media data and can yield good results when used with data from twitter, facebook, etc." Since Reddit counts as social media, I believe VADER is a good choice for this project.
 
+![VADER before neutral value removal](visualizations/vader_pre_removal.png)
+![VADER after neutral value removal](/figures/vader_post_removal.png)
+
 ### Bag of words features
 
 We have both of the target variables we need - score and sentiment. We are unable to use models meaningfully on our data as it currently stands. To create proper training data:
@@ -105,7 +111,7 @@ I also use the Rsquared; the R-squared value tells you much of the actual values
 
 # Modeling
 
-All modeling was done in [the modeling notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/modeling.ipynb). I only include the best models and their resultsAll other models are left in [the modeling notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/modeling.ipynb).
+All modeling was done in [the modeling notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/modeling.ipynb). I only include the best models and their results. All other models are left in [the modeling notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/modeling.ipynb).
 
 The model of choice was Linear Regression. The advantages of this model for this project are:
 
@@ -132,7 +138,7 @@ Mean Absolute Error results:
 - Test MAE for bigrams model: 0.433
 - Test MAE for trigrams model: 0.363
 
-### Third Iteration
+### Third Iteration (BEST ITERATION)
 
 The third iteration of modeling also used the "vader" target variable, but I eliminated all neutral scores from the dataset. The results were marginally better for R^2 but the MAE scores got slightly worse:
 
@@ -162,7 +168,7 @@ Mean Absolute Error results:
 
 ## Methods Justification & Value to Stakeholder
 
-The Linear Regression that we use provides a series of positive and negative coefficientsth that say how well thye are able to control / dominate territory.
+The Linear Regression that we use provides a series of positive and negative coefficients that say how well they are able to control / dominate territory.
     
 ## Limitations
 
@@ -170,7 +176,11 @@ We only use one social media platform: Reddit.
 Furthermore, we only use one subreddit.
 So I would say our data could be considered limited in scope.
 
-## Recommendations
+## Insights & Recommendations
+![top_unigrams](visuazliations/top_unigrams.png)
+![top_bigrams](visuazliations/top_bigrams.png)
+![top_trigrams](visuazliations/top_igrams.png)
+
 
 ## Repository Structure
 - **[data](https://github.com/Jellohub/political_sentiment_analysis/tree/master/data)**: folder containing data files, if any.
