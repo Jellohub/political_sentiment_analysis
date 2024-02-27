@@ -177,9 +177,9 @@ Furthermore, we only use one subreddit.
 So I would say our data could be considered limited in scope.
 
 ## Insights & Recommendations
-![top_unigrams](visuazliations/top_unigrams.png)
-![top_bigrams](visuazliations/top_bigrams.png)
-![top_trigrams](visuazliations/top_tigrams.png)
+![top_unigrams](visualizations/top_unigrams.png)
+![top_bigrams](visualizations/top_bigrams.png)
+![top_trigrams](visualizations/top_tigrams.png)
 
 Based on the top n-grams above:
 
