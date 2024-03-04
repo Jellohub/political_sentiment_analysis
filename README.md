@@ -176,44 +176,15 @@ We only use one social media platform: Reddit.
 Furthermore, we only use one subreddit.
 So I would say our data could be considered limited in scope.
 
-## Insights & Recommendations
+## Top Words & Phrases
 ![top_unigrams](visualizations/top_unigrams.png)
 ![top_bigrams](visualizations/top_bigrams.png)
 ![top_trigrams](visualizations/top_trigrams.png)
 
-Based on the top n-grams above:
+## Recommendations
 
-### Insight #1
-The base is passionate about their representative
-- “Best” is listed in the most positive words
-- The word “Trump” is listed in the most positive words
-- The phrase “god emperor Trump” is listed in the most positive trigrams
-- Phrases insulting their representative such as “orange man bad” and “anti trump” are listed in the most negative trigrams
-
-
-### Insight #2
-The base is passionately against opposing politicians and organizations
-- “News”, “media”, “fake news”, “fake news media”, “CNN fake news” and “deep state” appear in the most negative phrases
-- “Hillary”, “Bill Clinton,” “Bill Clinton rapist”, “left”, and “liberalism mental disorder” appear in the most negative phrases
-
-### Insight #3
-The base is highly religious
-- “God”, “God bless,” “thank God”, and “God bless America” appear in the most positive phrases.
-
-### Insight #4
-The base is very passionate about the relevant issues
-- Swear words such as the f-word and “shit” commonly appear in both the most positive and negative phrases column.
-
-### Insight #5
-The base is very fond of their country
-- Country-oriented phrases such as “America great”, “United States”, “God bless America,” “make America great,” and “making America great” appear in the positive column.
-- Phrases such as “civil war” and “middle east” appear in the negative column.
-
-### Recommendations
-
-- Try to match the base’s enthusiasm with your own
-- Be aware that they are angry against certain people and organizations and want immediate change
-- Be aware of the relevant issues that dominate the voter base's conversation
+- Cater to the base’s religious tendencies. “God” appears in the most positive words and phrases – “God bless,” “Thank God,” “God bless America.”
+- Speak fondly of the US, since the base holds it in high regard. “America great”, “United States”, “God bless America,” “make America great,” and “making America great” appear in the positive columns.
 
 
 ## Repository Structure
