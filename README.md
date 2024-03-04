@@ -111,7 +111,7 @@ I also use the Rsquared; the R-squared value tells you much of the actual values
 
 # Modeling
 
-All modeling was done in [the modeling notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/modeling.ipynb). I only include the best models and their results. All other models are left in [the modeling notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/modeling.ipynb).
+All modeling was done in [the modeling notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/modeling.ipynb). I only include the best models and their results in the final notebook.
 
 The model of choice was Linear Regression. The advantages of this model for this project are:
 
@@ -124,47 +124,15 @@ We fit one model for each set of features, so we could analyze the model coaeffi
 
 We started by using the "score" target variable. The results were very poor, with R-squared values of <0.1 for each model. These are so abysmal that I am not going to go into details for any of these models.
 
-### Second Iteration
+|             | Second iteration | Third iteration | Fourth iteration |
+|-------------|------------------|-----------------|------------------|
+| Unigram R2  | 0.245            | 0.249           | 0.249            |
+| Bigram R2   | 0.166            | 0.168           | 0.168            |
+| Trigram R2  | 0.326            | 0.344           | 0.333            |
+| Unigram MAE | 0.33             | 0.408           | 0.408            |
+| Bigram MAE  | 0.433            | 0.468           | 0.469            |
+| Trigram MAE | 0.363            | 0.406           | 0.424            |
 
-The second iteration of modeling used the "vader" target variable. The results were much better:
-
-- Test R-squared for unigrams model: 0.245
-- Test R-squared for bigrams model: 0.166
-- Test R-squared for trigrams model: 0.326
-
-Mean Absolute Error results:
-
-- Test MAE for unigrams model: 0.33
-- Test MAE for bigrams model: 0.433
-- Test MAE for trigrams model: 0.363
-
-### Third Iteration (BEST ITERATION)
-
-The third iteration of modeling also used the "vader" target variable, but I eliminated all neutral scores from the dataset. The results were marginally better for R^2 but the MAE scores got slightly worse:
-
-- Test R-squared for unigrams model: 0.249 (+0.003)
-- Test R-squared for bigrams model: 0.168 (+0.002)
-- Test R-squared for trigrams model: 0.344 (+0.018)
-
-Mean Absolute Error results:
-
-- Test MAE for unigrams model: 0.408 (+0.078)
-- Test MAE for bigrams model: 0.468 (+0.035)
-- Test MAE for trigrams model: 0.406 (+0.043)
-
-### Fourth Iteration
-
-The fourth iteration of modeling performed a hyperparameter grid search with the much faster SGDRegressor (also a linear regression model – just faster than the OLS version, and without significance values for the coefficients). The same data in the previous iteration was used for this one (with neutral VADER sentiment values removed). This iteration did not yield any improvements. All values were the same or slightly worse.
-
-- Test R-squared for unigrams model: 0.249 (+0.00)
-- Test R-squared for bigrams model: 0.168 (+0.00)
-- Test R-squared for trigrams model: 0.333 (-0.011)
-
-Mean Absolute Error results:
-
-- Test MAE for unigrams model: 0.408 (+0.00)
-- Test MAE for bigrams model: 0.469 (+0.001)
-- Test MAE for trigrams model: 0.424 (+0.018)
 
 ## Methods Justification & Value to Stakeholder
 
