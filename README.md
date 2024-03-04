@@ -33,54 +33,15 @@ After extraction, our initial dataframe had 2.1 million total entries ranging fr
 
 All steps taken in this section were performed in [the preprocessing notebook](https://github.com/Jellohub/political_sentiment_analysis/blob/master/notebooks/preprocessing.ipynb).
 
-### Removing hyperlinks and extraneous characters
-
-- I used a regex to eliminate hyperlinks. The regex wasn't perfect, but it was very good. It reduced the number of posts with hyperlinks from 108,228 to just 229. That's a 99.8% reduction in posts with hyperlinks.
-- There were several other combinations of characters we replaced, such as "&gt;" that repeated many times. These are longhand notations of certain special characters like ">" or "<". They can be looked up [on this website](https://www.htmlhelp.com/reference/html40/entities/special.html).
-
-### Tokenizing posts
-- Tokenizing strings is the process of separating them into lists, where each element is an individual word in that sring. I used another regex that identified words and eliminated special characters such as punctuation.
-- Tokenization enables easy stopword removal and the creation of bigrams and trigrams.
-
-### Stopword removal
-- Stopwords are commonly used words that significantly increase the burden on models while contributing very little. We removed stopwords contained in nltk's stopword list. This resulted in the removal of 22.3 million words, about half of all original words.
-
-### Calculating post lengths
-- Enables the removal of insanely long posts and create more reasonably distributed data.
-
-### Creating bigrams and trigrams
-- Individual words are one means of extracting insights from this data, but bigrams and trigrams carry more information than individual words. By extracting bigrams and trigrams, we have two more options for analysis and the potential to give more meaningful recommendations to our stakeholder.
-
-### Removing bots
-- All posts from the universal reddit moderator, AutoModerator, were removed.
-- Posts with the words "bot made by u/reddit_username" were removed.
-- Authors with the word "bot" or "Bot" in their name were removed.
-- Posts with the words "I'm a bot" were removed.
-
-These measures weren't perfect - they probably didn't remove all the bots, and they did remove some posts by real people. However, the vast majority of posts removed by these measures were made by bots.
-
-If you're skeptical about the effectiveness of these measures, or you think they might have been too extensive, head to the Appendix at the end of this notebook. It shows you the kinds of posts each measure removed. These queries take up quite a bit of space, which is why I kept them at the end of the notebook.
-
-### Capping post length at 200 words
-- Looking at the distribution of post length, it was extremely skewed to the right. Capping post length at 200 words results in a much more reasonable distribution.
-
-![length_pre_removal](visualizations/lengths_pre_removal.png)
-![length_post_removal](visualizations/lengths_post_removal.png)
-
-### Giving post score a hard boundary of (-25, 100)
-- Looking at the distribution of post scores, it had long tails to both the right and left. A lower boundary of -25 and an upper boundary of 100 returned the distribution to a more reasonable state.
-
-![score_pre_removal](visualizations/scores_pre_removal.png)
-![score_post_removal](visualizations/scores_post_removal.png)
-
-### Spam removal
-- Removing posts longer than 200 words eliminated some spam, but not all.
-- I used the most common unigrams, bigrams, and trigrams to locate any other spam.
-    - Posts containing a unigram four or more times in a row were removed.
-    - Posts containing a bigram three or more times in a row were removed.
-    - Posts containing a trigram two or more times in a row were removed.
-- Even after all these measures, trigrams such as "source script protect" continued to appear in the most common phrases. I manually removed these.
-- All combined spam from this notebook is stored externally in a single dataframe, "spam.parquet."
+- Removing hyperlinks and extraneous characters
+- Tokenizing posts (separating posts into lists, where each element is an individual word)
+- Stopword removal (stopwords = commonly used words with little meaning that contribute almost nothing to models)
+- Calculating post lengths
+- Creating bigrams (two-word phrases) and trigrams (three-word phrases) to analyze reddit data at multiple levels of complexity
+- Removing bot posts
+- Capping post length at 200 words
+- Giving post score a hard boundary of (-25,100)
+- Spam removal (any post with numerous consecutive identical words/phrases)
 
 # Feature Enginnering
 
