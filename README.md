@@ -105,10 +105,10 @@ We only use one social media platform: Reddit.
 Furthermore, we only use one subreddit.
 So I would say our data could be considered limited in scope.
 
-## Top Words & Phrases
-![top_unigrams](visualizations/top_unigrams.png)
-![top_bigrams](visualizations/top_bigrams.png)
-![top_trigrams](visualizations/top_trigrams.png)
+## Top Words & Phrases (Only displaying top 10 for each category)
+![top_unigrams](visualizations/top_unigrams_small.png)
+![top_bigrams](visualizations/top_bigrams_small.png)
+![top_trigrams](visualizations/top_trigrams_small.png)
 
 ## Recommendations
 
